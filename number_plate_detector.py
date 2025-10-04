@@ -9,6 +9,8 @@ from collections import defaultdict, deque
 import tempfile
 import os
 
+API_URL = os.getenv("API_URL")
+
 st.title("License Plate Detection and MOT Checker")
 
 st.markdown("""
@@ -174,7 +176,7 @@ if st.button("Process Video") and uploaded_video:
         with st.spinner("Fetching MOT data..."):
             for plate in unique_plates:
                 try:
-                    response = requests.get(f"http://127.0.0.1:8000/mot/{plate}")
+                    response = requests.get(f"{API_URL}/mot/{plate}")
                     if response.status_code == 200:
                         mot_data = response.json()
                         mot_data_dict[plate] = mot_data
@@ -187,4 +189,5 @@ if st.button("Process Video") and uploaded_video:
             with st.expander(f"Plate: {plate}"):
                 st.json(data)
     else:
+
         st.info("No license plates detected.")
