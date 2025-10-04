@@ -7,4 +7,5 @@ easyocr
 fastapi
 msal
 python-dotenv
+univcorn
 pydantic
