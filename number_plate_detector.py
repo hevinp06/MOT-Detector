@@ -8,6 +8,8 @@ import re
 from collections import defaultdict, deque
 import tempfile
 import os
+from dotenv import load_dotenv
+load_dotenv()
 
 API_URL = os.getenv("API_URL")
 
@@ -191,3 +193,4 @@ if st.button("Process Video") and uploaded_video:
     else:
 
         st.info("No license plates detected.")
+
