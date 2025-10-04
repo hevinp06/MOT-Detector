@@ -1,0 +1,10 @@
+streamlit
+opencv-python
+numpy
+requests
+ultralytics
+easyocr
+fastapi
+msal
+python-dotenv
+pydantic
